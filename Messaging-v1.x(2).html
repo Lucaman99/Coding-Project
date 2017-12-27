@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Messaging Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="index.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class= "full-nav">
+        <div class= "nav">
+        <div class= "container">
+            <p id="nav1">{ Apogee Messaging }</p>
+            <p id="nav2">Message Thread &nbsp; <i class="fa fa-chevron-circle-down"></i></p>
+        </div>
+    </div>
+    <div class= "nav2">
+        <div class= "container">
+        </div>
+    </div>
+</div>
+<div class= "window" id="wn">
+<div class= "container">
+<br><br><br>
+</div>
+</div>
+<div class= "bars">
+        <div class= "bar1">
+            <div class= "container">
+                <input type="text" name="text" id="tx" placeholder="Enter a Message Here" size="115">
+                <button type="button" id="bu">Send</button>
+            </div>
+        </div>
+        <div class= "bar2">
+            <div class= "container">
+                <p>Other Test</p>
+            </div>
+        </div>
+    </div>
+    <style>
+    #nav1 {
+        margin-left:-150px;
+    }
+    #nav2 {
+        margin-left:500px;
+    }
+    .nav p {
+        font-family:Calibri;
+        margin-top:10px;
+        color:white;
+        display:inline;
+    }
+    .nav {
+        background-color:#33618E;
+        width:1440px;
+        height:50px;
+        margin-left:8px;
+        padding-top:10px;
+    }
+    html {
+        margin-left:-8px;
+    }
+    .bar1 {
+        width:1000px;
+        height:70px;
+        background-color:#A7A7A7;
+        margin-top:706px;
+        margin-left:60px;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+    }
+    .bar2 {
+        width:300px;
+        height:70px;
+        background-color:#A7A7A7;
+        margin-top:-70px;
+        margin-left:1100px;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+    }
+    .bars {
+        position:sticky;
+        top: calc(100vh - 70px);
+        z-index:1;
+    }
+    .nav2 {
+        background-color:#3F83BC;
+        height:50px;
+        width:1448px;
+        display:none;
+        position:absolute;
+    }
+    .full-nav {
+        position:sticky;
+        top:0;
+        z-index:1;
+    }
+    html, body {
+        height:200%;
+    }
+    .bar1 input {
+        font-size:12px;
+        margin-top:25px;
+        border-radius:20px;
+        padding-left:10px;
+        outline:none;
+        border:solid 1px;
+    }
+    .outgoing {
+        height:100px;
+        width:100px;
+        background-color:#33618E;
+        margin-top:10px;
+    }
+    .window {
+        position:absolute;
+        margin-left:1320px;
+    }
+    .bar1 button {
+        font-size:13px;
+        border-radius:20px;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        $("#nav2 i").click(function(){
+            $(".nav2").slideToggle()
+        })
+        $("#bu").click(function(){
+        var bubble = document.createElement("DIV");
+        $(bubble).addClass("outgoing")
+        document.getElementById("wn").appendChild(bubble)
+    })
+    })
+</script>
+    </body>
+    </html>
