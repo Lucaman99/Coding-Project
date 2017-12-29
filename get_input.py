@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home(): return render_template('test.html')
 
 
-@app.route('/', methods=['SEND'])
+@app.route('/', methods=['POST'])
 def my_form_post():
     text = request.form['text']
     print(text)
