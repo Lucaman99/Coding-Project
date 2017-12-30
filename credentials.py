@@ -6,6 +6,7 @@ def verify(username, password):
     username = username.lower()
     df = pd.read_csv('private.csv')
     usernames = df['USERNAME'].tolist()
+    if username not in usernames: return False
     hashes = df['HASH'].tolist()
     return pbkdf2_sha256.verify(password, hashes[usernames.index(username)])
 
