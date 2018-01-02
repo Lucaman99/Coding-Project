@@ -7,7 +7,7 @@ var db_table_arr = [["user_info (email TEXT, username TEXT, password TEXT, first
 
 function init_db(db_name, db_table) {
 
-var connector = mysqldb.createConnection({host: "localhost", user: "root", password: "Lucaman"})
+var connector = mysqldb.createConnection({host: "localhost", user: "root", password: "Password"})
 connector.connect(function (err){
 	if (err) throw err;
 	var mysql = "CREATE DATABASE " + db_name
@@ -18,7 +18,7 @@ connector.connect(function (err){
 })
 if (db_table !== undefined) {
 	console.log(db_name)
-	var connectortwo = mysqldb.createConnection({host: "localhost", user:"root", password: "Lucaman", database: db_name})
+	var connectortwo = mysqldb.createConnection({host: "localhost", user:"root", password: "Password", database: db_name})
 	connectortwo.connect(function (err) {
 	if (err) throw err;
 	for (var v = 0; v < db_table.length; v++) {
