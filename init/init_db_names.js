@@ -5,7 +5,7 @@ var db_name_arr = []
 
 function init_db(db_name) {
 
-var connector = mysqldb.createConnection({host: "localhost", user: "root", password: "Lucaman"})
+var connector = mysqldb.createConnection({host: "localhost", user: "root", password: \\Password Here})
 connector.connect(function (err){
 	if (err) throw err;
 	var mysql = "CREATE DATABASE " + db_name
