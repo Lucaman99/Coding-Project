@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     # return redirect(url_for('login'))
-    return render_template('home.html')
+    return render_template('home.html', name="Apogee")
 
 
 @app.route('/weblogin', methods=['GET'])
@@ -25,7 +25,7 @@ def app_login():
     # return render_template('test.html', display_text=response)
 
 
-@app.route('/login')
+@app.route('/login/')
 def login():
     return render_template('test.html')
 
