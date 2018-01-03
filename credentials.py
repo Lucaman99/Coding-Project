@@ -14,12 +14,12 @@ def verify(username, password):
 def new_user(username, password):
     username = username.lower()
     hashed = pbkdf2_sha256.encrypt(password, rounds=200000, salt_size=16)
-    df = pd.read_csv('private.csv')
+    df = pd.read_csv('credentials.csv')
     usernames = df['USERNAME'].tolist()
     if username in usernames: return 'A user with that username already exists!'
     last_row = len(usernames)
     df.loc[last_row] = username, hashed
-    df.to_csv('private.csv', index=None)
+    df.to_csv('credentials.csv', index=None)
     return 'User has been created.'
 
 
