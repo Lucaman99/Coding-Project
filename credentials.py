@@ -4,7 +4,7 @@ import pandas as pd
 
 def verify(username, password):
     username = username.lower()
-    df = pd.read_csv('private.csv')
+    df = pd.read_csv('credentials.csv')
     usernames = df['USERNAME'].tolist()
     if username not in usernames: return False
     hashes = df['HASH'].tolist()
@@ -27,11 +27,11 @@ def change_password(username, new_password):
     # todo: add parameter old_password
     username = username.lower()
     hashed = pbkdf2_sha256.encrypt(new_password, rounds=200000, salt_size=16)
-    df = pd.read_csv('private.csv')
+    df = pd.read_csv('credentials.csv')
     usernames = df['USERNAME'].tolist()
     if username not in usernames: return 'ERROR CONTACT SUPPORT'
     df.loc[usernames.index(username)]['HASH'] = hashed
-    df.to_csv('private.csv', index=None)
+    df.to_csv('credentials.csv', index=None)
     return 'Your password has been changed.'
 
 
