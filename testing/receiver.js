@@ -5,7 +5,7 @@ var http = require('http')
 var fs = require('fs')
 var mysql = require('mysql')
 
-var con = mysql.createConnection({host: 'localhost', user: 'root', password: 'Lucaman', database: "testing"})
+var con = mysql.createConnection({host: 'localhost', user: 'root', password: 'Password', database: "testing"})
 
 con.connect(function (err){
 	if (err) throw err;
