@@ -56,6 +56,11 @@ def sendmsg():
     # todo: make sendmsg.html with username, password, message, recipient fields
 
 
+@app.route('/check+for+new+messages', methods=['GET'])
+def check_for_new_message():
+    username = request.args.get('username')
+    password = request.args.get('password')
+    # return a JSON of JSON messages
 # @app.route('/success/<name>')
 # def success(name):
 #     return 'welcome %s' % name
