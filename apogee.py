@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request
 import credentials
-from flask_bcrypt import Bcrypt
-import flask_login
+# from flask_bcrypt import Bcrypt
+# import flask_login
 
 
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
+# bcrypt = Bcrypt(app)
 # {
 #     msg: "asdkpoaskdpoaks"
 #     sender: ""
