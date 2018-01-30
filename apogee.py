@@ -42,8 +42,8 @@ def about():
 # todo: make a web login version
 
 
-@app.route('/sendmsg', methods=['POST'])
-def sendmsg():
+@app.route('/send+message', methods=['POST'])
+def send_msg():
     # todo: make a User class
     username = request.form['username']
     password = request.form['password']
@@ -56,10 +56,14 @@ def sendmsg():
     # todo: make sendmsg.html with username, password, message, recipient fields
 
 
-@app.route('/check+for+new+messages', methods=['GET'])
-def check_for_new_message():
+@app.route('/new+messages', methods=['GET'])
+def new_messages():
     username = request.args.get('username')
     password = request.args.get('password')
+    if credentials.verify(username, password):
+        messages = '{}'
+        return messages
+    return 'INVALID USER'
     # return a JSON of JSON messages
 # @app.route('/success/<name>')
 # def success(name):
