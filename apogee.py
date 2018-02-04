@@ -13,6 +13,8 @@ app = Flask(__name__)
 #     receiver: ""
 # }
 
+# todo: make a signup page, create private, public encryption keys when they do this and store in the users table
+
 
 @app.route('/')
 def home():
