@@ -1,4 +1,4 @@
-# Coding-Project
+# Apogee
 
 This will be a messaging and collaboration application built with the following languages:
 
